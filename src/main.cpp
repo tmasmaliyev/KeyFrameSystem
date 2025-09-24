@@ -145,7 +145,7 @@ bool initializeSystem()
 
 GLFWwindow *createWindow()
 {
-    GLFWwindow *window = glfwCreateWindow(800, 600, "Key-frame Motion Control System (Optimized)", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(800, 600, "Key-frame Motion Control System", NULL, NULL);
     if (!window)
     {
         std::cerr << "Failed to create GLFW window" << std::endl;
@@ -237,7 +237,7 @@ void setupMesh()
 
 void printSystemInfo()
 {
-    std::cout << "Key-framing Motion Control System (Optimized)" << std::endl;
+    std::cout << "Key-framing Motion Control System" << std::endl;
     std::cout << "Settings:" << std::endl;
     std::cout << "  Orientation: " << (config.useQuaternions ? "Quaternions" : "Euler Angles") << std::endl;
     std::cout << "  Interpolation: " << (config.useBSpline ? "B-Spline" : "Catmull-Rom") << std::endl;
