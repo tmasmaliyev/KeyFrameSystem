@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/build",
+  "command": "/usr/bin/g++  -I\"/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/include\" -Wall -g -std=gnu++17 -o CMakeFiles/keyframe_system.dir/src/main.cpp.o -c \"/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/src/main.cpp\"",
+  "file": "/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/src/main.cpp",
+  "output": "CMakeFiles/keyframe_system.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/build",
+  "command": "/usr/bin/g++  -I\"/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/include\" -Wall -g -std=gnu++17 -o CMakeFiles/keyframe_system.dir/src/motion/Mesh.cpp.o -c \"/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/src/motion/Mesh.cpp\"",
+  "file": "/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/src/motion/Mesh.cpp",
+  "output": "CMakeFiles/keyframe_system.dir/src/motion/Mesh.cpp.o"
+},
+{
+  "directory": "/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/build",
+  "command": "/usr/bin/g++  -I\"/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/include\" -Wall -g -std=gnu++17 -o CMakeFiles/keyframe_system.dir/src/motion/MotionController.cpp.o -c \"/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/src/motion/MotionController.cpp\"",
+  "file": "/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/src/motion/MotionController.cpp",
+  "output": "CMakeFiles/keyframe_system.dir/src/motion/MotionController.cpp.o"
+},
+{
+  "directory": "/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/build",
+  "command": "/usr/bin/g++  -I\"/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/include\" -Wall -g -std=gnu++17 -o CMakeFiles/keyframe_system.dir/src/motion/Renderer.cpp.o -c \"/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/src/motion/Renderer.cpp\"",
+  "file": "/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/src/motion/Renderer.cpp",
+  "output": "CMakeFiles/keyframe_system.dir/src/motion/Renderer.cpp.o"
+},
+{
+  "directory": "/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/build",
+  "command": "/usr/bin/g++  -I\"/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/include\" -Wall -g -std=gnu++17 -o CMakeFiles/keyframe_system.dir/src/motion/Utils.cpp.o -c \"/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/src/motion/Utils.cpp\"",
+  "file": "/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/src/motion/Utils.cpp",
+  "output": "CMakeFiles/keyframe_system.dir/src/motion/Utils.cpp.o"
+}
+]
