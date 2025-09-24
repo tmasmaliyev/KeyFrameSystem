@@ -1,4 +1,4 @@
-#include <GL/glew.h> 
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <chrono>
@@ -83,24 +83,6 @@ void keyCallback(GLFWwindow *window, int key, int /*scancode*/, int action, int 
             showPerformanceStats = !showPerformanceStats;
             std::cout << "Performance stats: " << (showPerformanceStats ? "ON" : "OFF") << std::endl;
             break;
-        case GLFW_KEY_L:
-        {
-            std::cout << "Enter OBJ file path: ";
-            std::string filename;
-            std::getline(std::cin, filename);
-            if (!filename.empty())
-            {
-                if (loadMeshFromOBJ(filename, &currentMesh))
-                {
-                    std::cout << "Successfully loaded: " << filename << std::endl;
-                }
-                else
-                {
-                    std::cout << "Failed to load: " << filename << std::endl;
-                }
-            }
-        }
-        break;
         case GLFW_KEY_ESCAPE:
             glfwSetWindowShouldClose(window, true);
             break;
@@ -232,18 +214,6 @@ void setupMotionSystem()
 
 void setupMesh()
 {
-    // Load mesh - check for teapot.obj first if no model specified
-    if (config.objFilename.empty())
-    {
-        // Try to load teapot.obj if it exists
-        std::ifstream teapotFile("teapot.obj");
-        if (teapotFile.good())
-        {
-            config.objFilename = "teapot.obj";
-            teapotFile.close();
-        }
-    }
-
     if (!config.objFilename.empty())
     {
         if (loadMeshFromOBJ(config.objFilename, &currentMesh))
@@ -290,7 +260,6 @@ void printSystemInfo()
     std::cout << "R - Reset animation" << std::endl;
     std::cout << "C - Reset camera" << std::endl;
     std::cout << "P - Toggle performance stats" << std::endl;
-    std::cout << "L - Load OBJ file (interactive)" << std::endl;
     std::cout << "ESC - Exit" << std::endl;
     std::cout << "\nCamera Controls:" << std::endl;
     std::cout << "Mouse Drag - Rotate camera" << std::endl;
