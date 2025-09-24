@@ -1,3 +1,0 @@
-/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/build/CMakeFiles/keyframe_system.dir
-/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/build/CMakeFiles/edit_cache.dir
-/home/tmasmaliyev/Documents/George Washington University/Computer_Animation/Homework1/KeyFrameSystem/build/CMakeFiles/rebuild_cache.dir
