@@ -6,30 +6,31 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Set build type to Release if not specified
-if(NOT CMAKE_BUILD_TYPE)
+if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
-endif()
+endif ()
 
 # Add compiler flags
-# set(CMAKE_CXX_FLAGS "-Wall")
+set(CMAKE_CXX_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
-# Find required packages
-# find_package(PkgConfig REQUIRED)
+find_program(GIT_EXECUTABLE git)
+if (GIT_EXECUTABLE AND EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/.git)
+    option(GIT_SUBMODULE "Check submodules during build" ON)
 
-# Find OpenGL
+    if(GIT_SUBMODULE)
+        message(STATUS "Submodule update")
+        execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --init --recursive
+                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                    RESULT_VARIABLE GIT_SUBMOD_RESULT)
+        if(NOT GIT_SUBMOD_RESULT EQUAL "0")
+            message(FATAL_ERROR "git submodule update --init failed with ${GIT_SUBMOD_RESULT}, please checkout submodules")
+            endif()
+    endif()
+endif()
+
 find_package(OpenGL REQUIRED)
-
-# Find GLFW3
-# pkg_check_modules(GLFW3 REQUIRED glfw3) 
-# fnd_package(glfw3 CONFIG REQUIRED)
-
-# Find GLEW
-# find_package(GLEW REQUIRED)
-
-# GLM is header-only, so we just need to find it
-# find_package(glm REQUIRED)
 
 # Find packages installed by vcpkg
 find_package(glfw3 CONFIG REQUIRED)
@@ -71,14 +72,6 @@ file(
 add_executable(keyframe_system ${SOURCES} ${HEADERS})
 
 # Link libraries
-# target_link_libraries(keyframe_system 
-#     ${OPENGL_LIBRARIES}
-#     ${GLFW3_LIBRARIES}
-#     GLEW::GLEW
-#     ${CMAKE_DL_LIBS}
-# )
-
-# Link libraries using vcpkg targets
 target_link_libraries(keyframe_system PRIVATE
     glfw
     GLEW::GLEW
@@ -97,21 +90,12 @@ add_custom_command(TARGET keyframe_system POST_BUILD
             "$<TARGET_FILE_DIR:keyframe_system>/assets"
 )
 
-# Print some information
-# message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
-# message(STATUS "OpenGL found: ${OPENGL_FOUND}")
-# message(STATUS "GLFW3 found: ${GLFW3_FOUND}")
-# message(STATUS "GLEW found: ${GLEW_FOUND}")
-
-# # Optional: Print build information
-# message(STATUS "Project: ${PROJECT_NAME}")
-# message(STATUS "Build directory: ${CMAKE_BINARY_DIR}")
-# message(STATUS "Source directory: ${CMAKE_SOURCE_DIR}")
-
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "OpenGL found: ${OPENGL_FOUND}")
-message(STATUS "GLFW3 found: ${glfw3_FOUND}")
+message(STATUS "GLFW3 found: ${GLFW3_FOUND}")
 message(STATUS "GLEW found: ${GLEW_FOUND}")
+
+# Optional: Print build information
 message(STATUS "Project: ${PROJECT_NAME}")
 message(STATUS "Build directory: ${CMAKE_BINARY_DIR}")
 message(STATUS "Source directory: ${CMAKE_SOURCE_DIR}")
